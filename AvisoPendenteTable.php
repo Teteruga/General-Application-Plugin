@@ -474,6 +474,9 @@ class AvisoPendenteTable extends Table
                 $query = $this->selectPadraoVisualizar($query);
                 $query = $this->wherePadraoVisualizar($query, $options['valor'], 'unidade');
                 $query = $this->containPadraoVisualizar($query);
+                $query
+                ->order(['InstantaneoAvisoPendente.numero_processo' => 'DESC']);
+                
 
                 break;
             case 'unidadeDownload':
@@ -502,7 +505,8 @@ class AvisoPendenteTable extends Table
                 $query = $this->wherePadraoVisualizar($query, $options['valor'], 'acervo', $options['nome']);
                 $query = $this->containPadraoVisualizar($query);
                 $query
-                    ->select(['servidor' => 'InstantaneoAvisoPendente.nome_servidor']);
+                    ->select(['servidor' => 'InstantaneoAvisoPendente.nome_servidor'])
+                    ->order(['InstantaneoAvisoPendente.numero_processo' => 'DESC']);
 
                 break;
             case 'acervoDownload':
@@ -639,37 +643,6 @@ class AvisoPendenteTable extends Table
         }
     }
 
-
-    /**
-     * 
-     * 
-     */
-    // public function queryBusca(Query $query, Array &$busca){
-
-    //     if( isset($busca['page']) )
-    //         unset($busca['page']);
-
-    //     foreach($busca as $key => $option){
-
-    //         if($key == 'sort')
-    //             break;
-
-    //         if(is_array($option) && !empty($option)){
-    //             foreach($option as $subkey => $suboption){
-    //                 if($suboption === 'IS NOT NULL' || $suboption === 'IS NULL')
-    //                     $query->where([$key.'.'.$subkey.' '.$suboption]);                    
-    //                 else if($suboption != '')
-    //                     $query->where([$key.'.'.$subkey => $suboption]);
-                    
-    //             }
-    //         }
-    //         else if( !is_array($option) && $option != '')
-    //             $query->where([$key => $option]);
-    //     }        
-
-    //     return $query;
-    // }
-
     public function queryBusca(Query $query, Array &$busca){
 
         $this->cleanFilterBusca($busca);
@@ -738,7 +711,7 @@ class AvisoPendenteTable extends Table
 
         $no_option = false;
 
-        if($subkey != NULL && $suboption != NULL){
+        if($subkey != NULL || $suboption != NULL){
             $val = $suboption;
             $sql_key = $key.'.'.$subkey;
         }
@@ -753,10 +726,7 @@ class AvisoPendenteTable extends Table
                                     ($subkey != NULL && $suboption == NULL) || ($key != NULL && $option == NULL)  )
             $no_option = true;
 
-
         if(!$no_option){
-            debug($key);
-            debug($subkey);exit();
             if( isset($subkey, $this->filter['is_null'][$key]) ){
                 if(in_array($subkey, $this->filter['is_null'][$key]) )
                     $statement = $this->createStatement($sql_key, $val, 'is_null');
@@ -838,8 +808,19 @@ class AvisoPendenteTable extends Table
         $query_name = $options['por'];
         unset($options['por']);
 
-        if( isset($options['filtroBusca']) )
+        if( isset($options['filtroBusca']) ){
+            $filtro_busca = json_encode($options['filtroBusca']);
             unset($options['filtroBusca']);
+        }
+        else
+            $filtro_busca = "[]";
+
+        if( isset($options['filtro']) ){
+            $filtro = $options['filtro'];
+            unset($options['filtro']);
+        }
+        else
+            $filtro = 'default';
 
         if( isset($options['busca']) ){
 
@@ -895,7 +876,9 @@ class AvisoPendenteTable extends Table
             
             Log::info("Query ".$query_name." realizada com sucesso.
                 Dados: data: ".$data.",  valor: ".$valor.",  nome: ".$nome.",  id: ".$id."
-                Busca: ".$busca
+                Busca: ".$busca."
+                Filtro Busca Escolhido: ".$filtro."
+                Filtro Busca: Alterações: ".$filtro_busca
                 , ['scope' => 'avisosPendentes_query']);
         }
         catch(Exception $e){
@@ -1175,6 +1158,36 @@ class AvisoPendenteTable extends Table
                 break;
         }
         // debug($query->toArray());exit();
+
+        return $query;
+    }
+
+    /**
+     * 
+     * 
+     */
+    public function queryBusca_OLD(Query $query, Array &$busca){
+
+        if( isset($busca['page']) )
+            unset($busca['page']);
+
+        foreach($busca as $key => $option){
+
+            if($key == 'sort')
+                break;
+
+            if(is_array($option) && !empty($option)){
+                foreach($option as $subkey => $suboption){
+                    if($suboption === 'IS NOT NULL' || $suboption === 'IS NULL')
+                        $query->where([$key.'.'.$subkey.' '.$suboption]);                    
+                    else if($suboption != '')
+                        $query->where([$key.'.'.$subkey => $suboption]);
+                    
+                }
+            }
+            else if( !is_array($option) && $option != '')
+                $query->where([$key => $option]);
+        }        
 
         return $query;
     }
