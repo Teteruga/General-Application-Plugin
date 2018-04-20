@@ -100,9 +100,11 @@ class AvisoPendenteController extends AppController {
             unset($dados_busca['manter_dia']);
 
             if( isset($dados_busca['sem_numero_pa']) ){
-                if($dados_busca['sem_numero_pa'] === '1')
+                if($dados_busca['sem_numero_pa'] === '1'){
+
                     $dados_busca['InstantaneoAvisoPendente']['numero_processo'] = '';
                     $filtro_busca = ['is_null' => ['InstantaneoAvisoPendente' => ['numero_processo']] ];
+                }
             }
             
             unset($dados_busca['sem_numero_pa']);
