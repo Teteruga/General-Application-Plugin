@@ -1,0 +1,226 @@
+/**
+Padrão
+*/
+body {
+  font-family: 'Ubuntu', sans-serif;
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+
+
+/**
+Tabela zebrada em azul
+*/
+/*.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f2faff;
+}*/
+
+.table-striped > tbody > tr > th{
+  background-color: #0069A8;
+  color: #fff;
+}
+
+.table-striped > tbody > tr > th > a{
+  background-color: #0069A8;
+  color: #fff;
+}
+
+.table-striped > tbody > tr > th small{
+  color: #fff;
+}
+
+table#processo tr:first-child, table#processo td:first-child, table#dados_cda tr:first-child, table#dados_cda td:first-child { 
+    font-weight: bold; 
+}
+
+/**
+Menu topo
+*/
+/*#custom-bootstrap-menu{
+	height:50px;
+	box-shadow: 0px 2px 0px rgba(0,0,0,0.2);
+	text-transform: uppercase;
+        font-weight:bold;
+}
+
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+    color: rgba(224, 224, 224, 1);
+}
+#custom-bootstrap-menu.navbar-default {
+    font-size: 14px;
+    background-color: rgba(0, 117, 187, 1);
+    border-width: 1px;
+    border-radius: 4px;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    color: rgba(224, 224, 224, 1);
+    background-color: rgba(248, 248, 248, 0);
+}
+
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(0, 136, 217, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(0, 136, 217, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #0088d9;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #0088d9;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #0088d9;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #0075bb;
+}
+
+
+  #custom-bootstrap-menu.navbar-default #custom-bootstrap-menu.navbar-nav #custom-bootstrap-menu.open #custom-bootstrap-menu.dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  #custom-bootstrap-menu.navbar-default #custom-bootstrap-menu.navbar-nav #custom-bootstrap-menu.open #custom-bootstrap-menu.dropdown-menu > li > a:hover,
+  #custom-bootstrap-menu.navbar-default #custom-bootstrap-menu.navbar-nav #custom-bootstrap-menu.open #custom-bootstrap-menu.dropdown-menu > li > a:focus {
+    color: #ecdbff;
+  }
+  #custom-bootstrap-menu.navbar-default #custom-bootstrap-menu.navbar-nav #custom-bootstrap-menu.open #custom-bootstrap-menu.dropdown-menu > .active > a,
+  #custom-bootstrap-menu.navbar-default #custom-bootstrap-menu.navbar-nav #custom-bootstrap-menu.open #custom-bootstrap-menu.dropdown-menu > .active > a:hover,
+  #custom-bootstrap-menu.navbar-default #custom-bootstrap-menu.navbar-nav #custom-bootstrap-menu.open #custom-bootstrap-menu.dropdown-menu > .active > a:focus {
+    color: #ecdbff;
+    background-color: #8e44ad;
+  }*/
+
+/**
+Login form
+*/
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+/**
+Brasão com sobra e cantos arredondados
+*/
+/*#titleAreaBox{
+	color: #fff;
+}*/
+
+/*#titleAreaBox:before {
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+	content:"PGE RJ - Sistema";
+	line-height: 20px;
+	font-weight:bold;
+	text-align:left;
+	font-size:14px;
+	font-style: normal;
+	font-variant: normal;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	padding: 10px 20px 10px 50px;
+	width:210px;
+	height:58px;
+	overflow: visible;
+	display:inline-block;
+	background: url("../img/PGE_logoGov.png") no-repeat transparent!important;
+	border-radius:0 0 5px 5px;
+	z-index:2;
+}*/
+
+/**
+    tooltip
+*/
+.tooltip.in {
+  filter: alpha(opacity=90);
+  opacity: .9;
+}
+
+.tooltip-inner {
+  font-weight:bold;
+  background-color: #013581;
+}
+
+table{
+   border-collapse: collapse !important;
+   width: 100%;
+   max-width: 100%;
+   margin-bottom: 20px;
+}
+
+fieldset {
+    margin-bottom: 10px;
+}
+
+form.form-inline > div > label{
+    margin:0 10px;
+}
+
+form.form-inline > div:first-child > label:first-child{
+    margin-left: 0;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+#msgStatusWsdl {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  line-height: 30px;
+  height: 30px;
+  color: red;
+/*  background-color: #f5f5f5;*/
+}

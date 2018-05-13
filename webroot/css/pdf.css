@@ -1,0 +1,272 @@
+
+*{
+   font-family: Arial !important;
+}
+
+html {
+    font-family: Arial;
+}
+
+table {
+    font-size: 10px;
+    font-family: Arial !important;
+    width: 100%;
+    margin-top: 10px;
+    border-spacing: 0px;
+    empty-cells: hide;
+    text-align: justify;
+}
+
+span {
+    font-family: Arial;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+th {
+    font-weight: 0px;
+    text-align: left;
+}
+
+td {
+     border: solid black;
+     padding: 10px;
+     border-width: 1px;
+}
+
+.header{
+    display: flex;
+    font-family: Arial !important;
+    margin-bottom: 30px;
+}
+
+.brasao {
+    width: 60px;
+    height: 60px;
+}
+
+.div-brasao {
+    width: 55px; 
+    float: left; 
+    background-color: red;
+}
+
+.texto-brasao {
+    margin-left: 10px; 
+    width: 50%;
+    float: left;
+}
+
+h1, h2, h3, h4, h5, h6{
+  margin-top:1px;
+  margin-bottom:1px;
+}
+
+h1 {
+    font-size: 20px;
+    margin-left: -1px;
+}   
+
+h2 {
+
+    font-size: 10px;
+}
+
+.titulo {
+    padding-top: -20px;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+}
+
+.tresColunas td{
+    width: 33%;
+    min-height:33%;
+}
+
+.tresColunas th{
+    width: 33%;
+}
+
+.quatroColunas{
+    border-collapse: separate;
+}
+
+.quatroColunas td{
+    width: 25%;
+    min-height:25%;
+}
+
+.quatroColunas th{
+    width: 25%;
+}
+
+.cincoColunas td{
+    width: 20%;
+}
+
+.cincoColunas th{
+    width: 20%;
+}
+
+.infringencia {
+    empty-cells: show;
+    vertical-align: top;
+    margin-bottom: 10px;
+}
+
+.infringencia td {
+    height: 400px;
+    border: solid black; 
+    border-width: 1px;
+}
+
+.citase{
+    float: right;
+    width: 20%;
+    text-align: left;
+    border: solid black;
+    border-width: 1px;
+    font-size: 8px;
+    padding: 10px;
+}
+
+.texto_citacao {
+    font-family: Arial;
+    font-size: 10px;
+    text-align: justify;
+    text-indent: 50px;
+}
+
+.negrito {
+    font-weight: bold;
+}
+
+.centralizado {
+    text-align: center;
+}
+
+.tituloCertidao {
+    text-align: center;
+    width: 100%;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.tituloDemonstrativo {
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+    font-family: Arial;
+    font-size: 16px;
+    margin-bottom: 28px;
+}
+
+.textoDebito {
+    text-align: justify;
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 60px;
+    font-family: Arial;
+    font-size: 10px;
+    text-indent: 50px;
+}
+
+.discriminacao td:nth-child(1){ 
+    width: 34%;
+}
+
+.dadosBasicosFolha{
+    border:none;
+}
+
+.dadosBasicosFolha td{
+    border:none;
+    padding: 0px;
+    padding-bottom: 5px;
+}
+
+.dadosBasicosFolha td:nth-child(1){ 
+    width: 20%;
+    font-weight: bold;
+}
+
+.demonstrativoTitulo {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.demonstrativo{
+    margin-top: 4px;
+    border-top: solid black;
+    border-left: solid black;
+    border-bottom: solid black;
+    border-width: 1px;
+    text-align: right;
+}
+
+.demonstrativo td{
+    border: none;
+    padding: 2px;
+}
+
+.demonstrativo tr:nth-child(2) td{ 
+    border-top: solid black;
+    border-bottom: solid black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.demonstrativo tr:nth-child(3) td{ 
+    border-bottom: solid black;
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+}
+
+.demonstrativo tr:nth-child(even) {
+  background-color: lightgrey;
+}
+
+.demonstrativo tr:nth-child(odd) {
+  background-color: white;
+}
+
+.demonstrativo tr td{ 
+    border-right: solid black;
+    border-width: 1px;
+}
+
+/*** demonstrativo UFIR ***/
+
+.demonstrativo_ufir{
+    margin-top: 4px;
+    text-align: right;
+}
+
+.demonstrativo_ufir td{
+    border-width: 1px;
+    padding: 5px;
+}
+
+.demonstrativo_ufir tr:nth-child(2) td{ 
+    text-align: center;
+    font-weight: bold;
+}
+
+.demonstrativo_ufir td:nth-child(2), .demonstrativo_ufir td:nth-child(4), .demonstrativo_ufir td:nth-child(6){ 
+    width:20%;
+}
+
+.atencaoCalculo{
+    margin-top: 4px;
+}
+
+.textoSaldo{
+    text-align: left;
+    padding: 20px;
+}
